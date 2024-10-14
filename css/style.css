@@ -1,0 +1,248 @@
+/* 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 내 가로 사이즈가 실제 가로사이즈가 될 수 있게끔. */
+    color: #222328;
+    list-style: none;
+    text-decoration: none;
+}
+/* 공통 스타일 */
+.blind {
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    /* position: absolute;
+  clip: rect(0 0 0 0); */
+}
+
+#wrap {
+    width: 1200px;
+    /* background-color: gainsboro; */
+    margin: auto;
+}
+header {
+    position: relative;
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#gnb::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 1200px;
+    height: 150px;
+    background-color: white;
+}
+
+#gnb:hover::before {
+    display: block;
+}
+
+#gnb {
+    display: flex;
+    gap: 40px;
+    /* margin-left: auto; */
+    /* 헤더가 세개 이상일 때 (ex. 로고와 로고옆 메뉴가(총 두개) 왼쪽 정렬인데 마지막 gnb or 유틸메뉴 등 (마지막 한개)는 오른쪽 정렬일 경우에) */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#gnb dt a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+    position: relative;
+    justify-content: center;
+}
+
+#gnb dl:hover dt a {
+    color: dodgerblue;
+    background-color: #fff;
+
+    /* border-bottom: 2px solid blue; */
+}
+
+#gnb dl:hover dt a::after {
+    display: block;
+}
+
+#gnb dt a::after {
+    display: none;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: dodgerblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#gnb dl {
+    min-width: 110px;
+    position: relative;
+    z-index: 10;
+}
+
+#gnb:hover dl dd {
+    display: block;
+}
+
+#gnb dd {
+    display: none;
+    background-color: white;
+    padding: 5px 20px;
+}
+
+.slide {
+    overflow: hidden;
+}
+
+.slide ul {
+    display: flex;
+}
+
+main {
+    height: 200px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main section {
+    width: 30%;
+}
+
+section .tit {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #eee;
+}
+
+.list-bbs li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.list-bbs li::before {
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+.list-bbs a {
+    display: block;
+    width: 95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+.bnr {
+    width: 100%;
+}
+
+.list-goto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    row-gap: 22px;
+}
+.list-goto a {
+    display: flex;
+    width: 168px;
+    height: 70px;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: dodgerblue;
+}
+
+footer {
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: gainsboro;
+}
+
+footer .logo {
+    font-size: 20px;
+}
+
+footer .adr {
+    font-style: normal;
+}
+
+.sns a {
+    display: inline-block;
+    padding: 20px 10px;
+}
+
+#modal {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+#modal .modal-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px;
+    align-content: space-around;
+    justify-content: space-around;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#modal .tit {
+    text-align: center;
+}
+
+#modal .cont {
+    margin: 1dvh;
+}
+
+#modal .btn-close {
+    display: block;
+    margin: auto auto 0 auto;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+}
